@@ -33,7 +33,7 @@ const products = [
     id: 'midnight',
     image: '/shots/THE-MADEBYBREADWINNER-BLACK-TEE.jpg',
     alt: 'Made by Breadwinner black tee',
-    name: 'Made By Breadwinner — Midnight',
+    name: 'MadeByBreadwinner.tee',
     category: 'T-shirt oversized',
     price: formatPrice(10000),
     inStock: true,
