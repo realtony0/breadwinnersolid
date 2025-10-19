@@ -56,6 +56,15 @@ const products = [
     price: formatPrice(10000),
     inStock: false,
   },
+  {
+    id: 'green',
+    image: '/shots/PANEMVICTOR GREEN TEE.jpeg',
+    alt: 'Panemvictor green tee',
+    name: 'Panemvictor Green Tee',
+    category: 'T-shirt oversized',
+    price: formatPrice(10000),
+    inStock: false,
+  },
 ];
 
 export default function Shop() {
