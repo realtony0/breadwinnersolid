@@ -34,7 +34,7 @@ export default function Home() {
               Streetwear taillé pour les breadwinners modernes.
             </h2>
             <p className="text-sm leading-7 text-brand-black/80 md:text-base">
-              Chaque drop BreadwinnerSolid s&apos;inspire des rues de Dakar et des codes premium des labels internationaux.
+              Chaque drop Breadwinner s&apos;inspire des rues de Dakar et des codes premium des labels internationaux.
               On fusionne silhouettes oversized, matières texturées et détails discrets pour proposer une identité unique, faite pour celles et ceux qui grindent sans relâche.
             </p>
             <Button as={Link} to="/lookbook" className="self-start">
@@ -55,7 +55,7 @@ export default function Home() {
               Conçus pour durer, pensés pour inspirer.
             </h3>
             <p className="text-sm leading-7 text-brand-beige/85 md:text-base">
-              Des coupes oversized, une palette signature et des finitions irréprochables. BreadwinnerSolid, c&apos;est l&apos;alliance d&apos;une vision street et d&apos;une fabrication soignée. Hustle smart, look sharp.
+              Des coupes oversized, une palette signature et des finitions irréprochables. Breadwinner, c&apos;est l&apos;alliance d&apos;une vision street et d&apos;une fabrication soignée. Hustle smart, look sharp.
             </p>
           </div>
           <div className="flex-1 space-y-6 rounded-3xl border border-brand-beige/20 bg-brand-green/70 p-6 text-sm leading-7 text-brand-beige/85 md:text-base">

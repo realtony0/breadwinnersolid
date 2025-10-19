@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 py-10 text-center">
         <div className="h-px w-24 bg-white/30" />
         <p className="text-lg font-semibold tracking-[0.3rem] uppercase">
-          BREADWINNERSOLID — All Day, Every Day.
+          BREADWINNER — All Day, Every Day.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 text-sm uppercase tracking-widest">
           <a href="https://instagram.com/breadwinner.solid" target="_blank" rel="noreferrer" className="transition-opacity duration-300 hover:opacity-80">

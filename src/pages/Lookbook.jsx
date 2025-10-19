@@ -2,12 +2,12 @@ import Gallery from '../components/Gallery';
 
 const lookbookOne = [1, 2, 3, 4, 5].map((index) => ({
   src: `/shots/shoot (${index}).jpg`,
-  alt: `BreadwinnerSolid lookbook ${index}`,
+  alt: `Breadwinner lookbook ${index}`,
 }));
 
 const lookbookTwo = [6, 7, 8, 9].map((index) => ({
   src: `/shots/shoot (${index}).jpg`,
-  alt: `BreadwinnerSolid lookbook ${index}`,
+  alt: `Breadwinner lookbook ${index}`,
 }));
 
 export default function Lookbook() {
@@ -34,7 +34,7 @@ export default function Lookbook() {
               Les nuits où tout se joue.
             </h2>
             <p className="text-sm text-white/80 md:text-base">
-              Lumières de la ville, ambiance lowlight et signatures BreadwinnerSolid pour une allure premium.
+              Lumières de la ville, ambiance lowlight et signatures Breadwinner pour une allure premium.
             </p>
           </header>
           <Gallery items={lookbookTwo} min={300} />

@@ -32,8 +32,8 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3 font-semibold tracking-[0.2rem] md:text-lg">
-          <span className="uppercase">BREADWINNERSOLID</span>
-          <img src="/shots/logo1.jpg" alt="BreadwinnerSolid logo" className="h-6 w-auto object-contain" />
+          <span className="uppercase">BREADWINNER</span>
+          <img src="/shots/logo1.jpg" alt="Breadwinner logo" className="h-6 w-auto object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium uppercase tracking-wide md:flex">
