@@ -106,7 +106,7 @@ export default function Shop() {
                   {product.inStock ? (
                     <Button
                       as="a"
-                      href={`https://wa.me/221785392407?text=${encodeURIComponent(`Salut Breadwinner, je veux commander: ${product.name}`)}`}
+                      href={`https://wa.me/221785392407?text=${encodeURIComponent(`Yoo le gagneur de pain, gère-moi cette baguette stp : ${product.name}`)}`}
                       className="px-4 py-2 text-xs font-semibold uppercase md:px-5 md:py-2.5 md:text-sm"
                       target="_blank"
                       rel="noreferrer"
