@@ -67,7 +67,7 @@ export default function Lookbook() {
       <section className="bg-brand-beige px-5 py-12 md:px-8 md:py-16">
         <div className="mx-auto max-w-6xl space-y-8">
           <header className="space-y-3 text-center">
-            <p className="text-xs uppercase tracking-[0.6rem] text-brand-green/60">Archives Mbouro</p>
+            <p className="text-xs uppercase tracking-[0.6rem] text-brand-green/60">Archives Mbourou</p>
             <h2 className="text-3xl font-semibold uppercase text-brand-green md:text-4xl">
               Réserves visuelles
             </h2>

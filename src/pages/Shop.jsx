@@ -31,12 +31,12 @@ const products = [
     inStock: true,
   },
   {
-    id: 'skulcap',
+    id: 'skullcap',
     image: '/shots/skullcap.jpg',
-    alt: 'Breadwinner skulcap',
-    name: 'Breadwinner Skulcap',
+    alt: 'Breadwinner skullcap',
+    name: 'Breadwinner Skullcap',
     category: 'Headwear',
-    price: 8000,
+    price: 6000,
     inStock: false,
   },
   {
