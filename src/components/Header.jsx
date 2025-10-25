@@ -78,12 +78,12 @@ export default function Header() {
           <button
             type="button"
             onClick={toggleCart}
-            className="relative hidden items-center gap-2 rounded-full border border-white/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3rem] text-white transition hover:border-white md:inline-flex"
+            className="relative hidden items-center justify-center rounded-full border border-white/30 p-2 text-white transition hover:border-white md:inline-flex"
+            aria-label="Ouvrir le panier"
           >
-            <CartIcon className="h-4 w-4 text-white" />
-            Panier
+            <CartIcon className="h-5 w-5 text-white" />
             {itemCount > 0 && (
-              <span className="ml-3 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
                 {itemCount}
               </span>
             )}
