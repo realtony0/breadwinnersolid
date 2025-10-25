@@ -9,6 +9,26 @@ const navItems = [
   { to: '/about', label: 'À propos' },
 ];
 
+function CartIcon({ className }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 7l1.2 12h7.6L17 7H7z" />
+      <path d="M9 7a3 3 0 0 1 6 0" />
+      <path d="M9 11h6" />
+    </svg>
+  );
+}
+
 export default function Header() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
@@ -58,8 +78,9 @@ export default function Header() {
           <button
             type="button"
             onClick={toggleCart}
-            className="relative hidden rounded-full border border-white/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3rem] text-white transition hover:border-white md:inline-flex"
+            className="relative hidden items-center gap-2 rounded-full border border-white/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3rem] text-white transition hover:border-white md:inline-flex"
           >
+            <CartIcon className="h-4 w-4 text-white" />
             Panier
             {itemCount > 0 && (
               <span className="ml-3 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
@@ -74,17 +95,7 @@ export default function Header() {
             className="relative flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white transition hover:border-white md:hidden"
             aria-label="Ouvrir le panier"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              className="h-5 w-5"
-            >
-              <path d="M6 7l1.5 12h9L18 7H6z" />
-              <path d="M9 7a3 3 0 0 1 6 0" />
-            </svg>
+            <CartIcon className="h-5 w-5" />
             {itemCount > 0 && (
               <span className="absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
                 {itemCount}
