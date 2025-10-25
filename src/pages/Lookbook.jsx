@@ -1,14 +1,24 @@
 import Gallery from '../components/Gallery';
 
-const lookbookOne = [1, 2, 3, 4, 5].map((index) => ({
-  src: `/shots/shoot (${index}).jpg`,
-  alt: `Breadwinner lookbook ${index}`,
-}));
+const createShootItems = (start, end) =>
+  Array.from({ length: end - start + 1 }, (_, offset) => {
+    const index = start + offset;
+    return {
+      src: `/shots/shoot (${index}).jpg`,
+      alt: `Breadwinner shoot ${index}`,
+    };
+  });
 
-const lookbookTwo = [6, 7, 8, 9].map((index) => ({
-  src: `/shots/shoot (${index}).jpg`,
-  alt: `Breadwinner lookbook ${index}`,
-}));
+const lookbookDaytime = createShootItems(1, 5);
+const lookbookNight = createShootItems(6, 9);
+
+const whatsappLookbook = Array.from({ length: 21 }, (_, idx) => {
+  const number = String(idx + 1).padStart(2, '0');
+  return {
+    src: `/shots/lookbook-whatsapp/lookbook-whatsapp-${number}.webp`,
+    alt: `WhatsApp street drop ${idx + 1}`,
+  };
+});
 
 export default function Lookbook() {
   return (
@@ -22,7 +32,7 @@ export default function Lookbook() {
               Dakar vibes, silhouettes audacieuses et la détermination des breadwinners.
             </p>
           </header>
-          <Gallery items={lookbookOne} min={300} />
+          <Gallery items={lookbookDaytime} min={300} />
         </div>
       </section>
 
@@ -37,7 +47,20 @@ export default function Lookbook() {
               Lumières de la ville, ambiance lowlight et signatures Breadwinner pour une allure premium.
             </p>
           </header>
-          <Gallery items={lookbookTwo} min={300} />
+          <Gallery items={lookbookNight} min={300} />
+        </div>
+      </section>
+
+      <section className="bg-brand-black px-5 py-12 text-white md:px-8 md:py-16">
+        <div className="mx-auto max-w-6xl space-y-8">
+          <header className="space-y-3 text-center">
+            <p className="text-xs uppercase tracking-[0.6rem] text-white/50">WhatsApp Drops</p>
+            <h2 className="text-3xl font-semibold uppercase md:text-4xl">La caméra du crew</h2>
+            <p className="text-sm text-white/80 md:text-base">
+              Toutes les photos WhatsApp fraîchement optimisées pour une vibe plus brute et spontanée.
+            </p>
+          </header>
+          <Gallery items={whatsappLookbook} min={220} className="md:gap-5" />
         </div>
       </section>
     </div>

@@ -30,6 +30,15 @@ const products = [
     inStock: true,
   },
   {
+    id: 'skulcap',
+    image: '/shots/skullcap.jpg',
+    alt: 'Breadwinner skulcap',
+    name: 'Breadwinner Skulcap',
+    category: 'Headwear',
+    price: formatPrice(8000),
+    inStock: false,
+  },
+  {
     id: 'midnight',
     image: '/shots/THE-MADEBYBREADWINNER-BLACK-TEE.jpg',
     alt: 'Made by Breadwinner black tee',
@@ -64,6 +73,15 @@ const products = [
     category: 'T-shirt oversized',
     price: formatPrice(10000),
     inStock: false,
+  },
+  {
+    id: 'baguette',
+    image: '/shots/mbourou-bi.jpg',
+    alt: 'La Baguette sac Breadwinner',
+    name: 'La Baguette',
+    category: 'Sac utilitaire',
+    price: formatPrice(10000),
+    inStock: true,
   },
 ];
 
