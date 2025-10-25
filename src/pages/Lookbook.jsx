@@ -16,7 +16,7 @@ const whatsappLookbook = Array.from({ length: 21 }, (_, idx) => {
   const number = String(idx + 1).padStart(2, '0');
   return {
     src: `/shots/lookbook-whatsapp/lookbook-whatsapp-${number}.webp`,
-    alt: `WhatsApp street drop ${idx + 1}`,
+    alt: `Street archive ${idx + 1}`,
   };
 });
 
@@ -54,10 +54,10 @@ export default function Lookbook() {
       <section className="bg-brand-black px-5 py-12 text-white md:px-8 md:py-16">
         <div className="mx-auto max-w-6xl space-y-8">
           <header className="space-y-3 text-center">
-            <p className="text-xs uppercase tracking-[0.6rem] text-white/50">WhatsApp Drops</p>
+            <p className="text-xs uppercase tracking-[0.6rem] text-white/50">Shots du crew</p>
             <h2 className="text-3xl font-semibold uppercase md:text-4xl">La caméra du crew</h2>
             <p className="text-sm text-white/80 md:text-base">
-              Toutes les photos WhatsApp fraîchement optimisées pour une vibe plus brute et spontanée.
+              Toutes les photos importées fraîchement optimisées pour une vibe plus brute et spontanée.
             </p>
           </header>
           <Gallery items={whatsappLookbook} min={220} className="md:gap-5" />
