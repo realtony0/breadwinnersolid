@@ -72,7 +72,7 @@ export default function Lookbook() {
               Réserves visuelles
             </h2>
             <p className="text-sm text-brand-black/70 md:text-base">
-              Un flow d’images plus brutes, équilibrées comme les sections précédentes pour garder le rythme.
+              Une sélection plus brute et spontanée, calibrée pour maintenir la même énergie visuelle que le reste du lookbook.
             </p>
           </header>
           <Gallery items={whatsappArchive} min={220} className="md:gap-5" />
