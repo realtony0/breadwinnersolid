@@ -79,7 +79,7 @@ const products = [
     image: '/shots/mbourou-bi.jpg',
     alt: 'La Baguette sac Breadwinner',
     name: 'La Baguette',
-    category: 'Sac utilitaire',
+    category: 'MBOUROU',
     price: formatPrice(10000),
     inStock: true,
   },

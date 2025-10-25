@@ -20,6 +20,9 @@ const whatsappLookbook = Array.from({ length: 21 }, (_, idx) => {
   };
 });
 
+const whatsappLatest = whatsappLookbook.slice(0, 9);
+const whatsappArchive = whatsappLookbook.slice(9);
+
 export default function Lookbook() {
   return (
     <div className="space-y-16">
@@ -55,12 +58,24 @@ export default function Lookbook() {
         <div className="mx-auto max-w-6xl space-y-8">
           <header className="space-y-3 text-center">
             <p className="text-xs uppercase tracking-[0.6rem] text-white/50">Shots du crew</p>
-            <h2 className="text-3xl font-semibold uppercase md:text-4xl">La caméra du crew</h2>
-            <p className="text-sm text-white/80 md:text-base">
-              Toutes les photos importées fraîchement optimisées pour une vibe plus brute et spontanée.
+            <h2 className="text-3xl font-semibold uppercase md:text-4xl">Derniers clichés</h2>
+          </header>
+          <Gallery items={whatsappLatest} min={240} className="md:gap-5" />
+        </div>
+      </section>
+
+      <section className="bg-brand-beige px-5 py-12 md:px-8 md:py-16">
+        <div className="mx-auto max-w-6xl space-y-8">
+          <header className="space-y-3 text-center">
+            <p className="text-xs uppercase tracking-[0.6rem] text-brand-green/60">Archives Mbouro</p>
+            <h2 className="text-3xl font-semibold uppercase text-brand-green md:text-4xl">
+              Réserves visuelles
+            </h2>
+            <p className="text-sm text-brand-black/70 md:text-base">
+              Un flow d’images plus brutes, équilibrées comme les sections précédentes pour garder le rythme.
             </p>
           </header>
-          <Gallery items={whatsappLookbook} min={220} className="md:gap-5" />
+          <Gallery items={whatsappArchive} min={220} className="md:gap-5" />
         </div>
       </section>
     </div>
