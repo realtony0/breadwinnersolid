@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 const navItems = [
   { to: '/', label: 'Accueil' },
@@ -11,6 +12,7 @@ const navItems = [
 export default function Header() {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
+  const { itemCount, toggleCart } = useCart();
 
   useEffect(() => {
     const timeout = setTimeout(() => setMounted(true), 80);
@@ -52,30 +54,69 @@ export default function Header() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 md:hidden"
-          onClick={() => setOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-        >
-          <span className="relative block h-4 w-6">
-            <span
-              className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
-                open ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'
-              }`}
-            />
-            <span
-              className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
-                open ? 'opacity-0' : 'top-1/2 -translate-y-1/2'
-              }`}
-            />
-            <span
-              className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
-                open ? 'bottom-1/2 translate-y-1/2 -rotate-45' : 'bottom-0'
-              }`}
-            />
-          </span>
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={toggleCart}
+            className="relative hidden rounded-full border border-white/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3rem] text-white transition hover:border-white md:inline-flex"
+          >
+            Panier
+            {itemCount > 0 && (
+              <span className="ml-3 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
+                {itemCount}
+              </span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={toggleCart}
+            className="relative flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white transition hover:border-white md:hidden"
+            aria-label="Ouvrir le panier"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              className="h-5 w-5"
+            >
+              <path d="M6 7l1.5 12h9L18 7H6z" />
+              <path d="M9 7a3 3 0 0 1 6 0" />
+            </svg>
+            {itemCount > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-white text-[0.65rem] font-bold text-brand-green">
+                {itemCount}
+              </span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-md border border-white/20 md:hidden"
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label="Toggle navigation"
+          >
+            <span className="relative block h-4 w-6">
+              <span
+                className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
+                  open ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'
+                }`}
+              />
+              <span
+                className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
+                  open ? 'opacity-0' : 'top-1/2 -translate-y-1/2'
+                }`}
+              />
+              <span
+                className={`absolute left-0 h-[2px] w-full bg-white transition-all duration-300 ${
+                  open ? 'bottom-1/2 translate-y-1/2 -rotate-45' : 'bottom-0'
+                }`}
+              />
+            </span>
+          </button>
+        </div>
       </div>
 
       <nav

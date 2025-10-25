@@ -1,5 +1,6 @@
 import Button from '../components/Button';
-const formatPrice = (value) => `${value.toLocaleString('fr-FR')} CFA`;
+import { useCart } from '../context/CartContext';
+import { formatPrice } from '../utils/formatPrice';
 
 const products = [
   {
@@ -8,7 +9,7 @@ const products = [
     alt: 'Oversized abricot acid washed tee',
     name: 'Oversized Tee — Abricot Acid Wash',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: false,
   },
   {
@@ -17,7 +18,7 @@ const products = [
     alt: 'Oversized black acid washed tee',
     name: 'Oversized Tee — Black Acid Wash',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: false,
   },
   {
@@ -26,7 +27,7 @@ const products = [
     alt: 'Breadwinner trucker hat',
     name: 'The 455 Breadwinner Trucker',
     category: 'Trucker hat',
-    price: formatPrice(8000),
+    price: 8000,
     inStock: true,
   },
   {
@@ -35,7 +36,7 @@ const products = [
     alt: 'Breadwinner skulcap',
     name: 'Breadwinner Skulcap',
     category: 'Headwear',
-    price: formatPrice(8000),
+    price: 8000,
     inStock: false,
   },
   {
@@ -44,7 +45,7 @@ const products = [
     alt: 'Made by Breadwinner black tee',
     name: 'MadeByBreadwinner.tee',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: true,
   },
   {
@@ -53,7 +54,7 @@ const products = [
     alt: 'Pinky brown tee',
     name: 'Pinky Brown Tee — SS Drop',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: false,
   },
   {
@@ -62,7 +63,7 @@ const products = [
     alt: 'Panemvictor white tee',
     name: 'Panemvictor SZN — White Tee',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: false,
   },
   {
@@ -71,7 +72,7 @@ const products = [
     alt: 'Panemvictor green tee',
     name: 'Panemvictor Green Tee',
     category: 'T-shirt oversized',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: false,
   },
   {
@@ -80,12 +81,14 @@ const products = [
     alt: 'La Baguette sac Breadwinner',
     name: 'La Baguette',
     category: 'MBOUROU',
-    price: formatPrice(10000),
+    price: 10000,
     inStock: true,
   },
 ];
 
 export default function Shop() {
+  const { addItem } = useCart();
+
   return (
     <div className="bg-brand-beige px-5 py-12 md:px-8 md:py-16">
       <div className="mx-auto max-w-6xl space-y-8">
@@ -125,26 +128,37 @@ export default function Shop() {
                   <h3 className="text-lg font-semibold uppercase text-brand-black">{product.name}</h3>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span
-                    className={`text-sm font-semibold md:text-base ${product.inStock ? 'text-brand-green' : 'text-brand-black/40'}`}
-                  >
-                    {product.price}
-                  </span>
-                  {product.inStock ? (
-                    <Button
-                      as="a"
-                      href={`https://wa.me/221785392407?text=${encodeURIComponent(`Yoo le gagneur de pain, gère-moi cette baguette stp : ${product.name}`)}`}
-                      className="px-4 py-2 text-xs font-semibold uppercase md:px-5 md:py-2.5 md:text-sm"
-                      target="_blank"
-                      rel="noreferrer"
+                  <div className="flex flex-1 flex-col gap-3">
+                    <span
+                      className={`text-sm font-semibold md:text-base ${product.inStock ? 'text-brand-green' : 'text-brand-black/40'}`}
                     >
-                      Commander
-                    </Button>
-                  ) : (
-                    <span className="inline-flex items-center justify-center rounded-md border-2 border-brand-black/30 px-4 py-2 text-xs font-semibold uppercase text-brand-black/40 md:px-5 md:py-2.5 md:text-sm">
-                      Rupture de stock
+                      {formatPrice(product.price)}
                     </span>
-                  )}
+                    {product.inStock ? (
+                      <div className="flex flex-col gap-2 sm:flex-row">
+                        <button
+                          type="button"
+                          onClick={() => addItem(product)}
+                          className="flex-1 rounded-md bg-brand-green px-4 py-2 text-xs font-semibold uppercase tracking-[0.3rem] text-white shadow-soft transition hover:bg-brand-green/90 md:text-sm"
+                        >
+                          Ajouter au panier
+                        </button>
+                        <Button
+                          as="a"
+                          href={`https://wa.me/221785392407?text=${encodeURIComponent(`Yoo le gagneur de pain, gère-moi cette baguette stp : ${product.name}`)}`}
+                          className="flex-1 px-4 py-2 text-xs font-semibold uppercase md:px-5 md:py-2.5 md:text-sm"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Commander WhatsApp
+                        </Button>
+                      </div>
+                    ) : (
+                      <span className="inline-flex items-center justify-center rounded-md border-2 border-brand-black/30 px-4 py-2 text-xs font-semibold uppercase text-brand-black/40 md:px-5 md:py-2.5 md:text-sm">
+                        Rupture de stock
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </article>
